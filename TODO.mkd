@@ -1,0 +1,27 @@
+
+### Concepts
+
+*   Rooms (with exits, stationary objects)
+*   Player (with inventory, misc state)
+*   Items (room and player can have objects)
+*   Descriptions (items, rooms)
+
+### Actions
+
+*   Get item
+*   Examine
+*   player goes from room to room
+*   Verbs change items' state (incl. inventory, room items)
+    *   levers, doors, buttons; open up exits
+    *   verbs -> keys? trigger a function which returns a closure, which points to a new item?
+    *   can we model conversation like this?
+
+### Representations
+
+*   First version would probably just have maps for everything.
+    *   Maybe a macro
+*   Totally not sure how to represent links b/w rooms. Ordinarily I'd use pointers.
+    *   Rooms have IDs? Room gets ID which points to room w/ other ID?
+    *   Rooms have labels as IDs? Then rooms point to rooms by name
+        *   e.g. :room-foo
+*   Items can have a map of verbs, and a function which returns a new item, plus description?
